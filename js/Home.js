@@ -15,7 +15,7 @@ var Home = new Honey.Node(
 		],
 	},
 	{
-		bgColor:"#000"
+		bgImage:"bg.jpg",
 	}
 );
 Smage.Home = Home;

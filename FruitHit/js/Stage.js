@@ -60,11 +60,11 @@ var Stage = new Honey.Node(
 			this.updateInfo();
 		},
 		showResult : function() {
-			this.Center.Result.showResult();
+			this.Result.showResult();
 		},
 	},
 	{
-		bgColor:"#000"
+		bgImage:"bg.jpg",
 	}
 );
 Game.Stage = Stage;
@@ -77,6 +77,8 @@ EventM.regist("resize", Stage, function(){
 	this.height(Honey.body.height());
 	this.Center.x((this.width()-this.Center.width())/2);
 	this.Center.y((this.height()-this.Center.height())/2);
+	this.grayBG.width(this.width());
+	this.grayBG.height(this.height());
 });
 
 //资源加载中
@@ -122,27 +124,27 @@ Stage.Center.add("Button", "Finish", (Stage.Center.width()-Honey.Styles.FruitHit
 }, {front:[Define.Element.LineText, {text:"FINISH", align:"center"}, Honey.Styles.FruitHit.Button.Pause]}, Honey.Styles.FruitHit.Button.Pause);
 
 //结果
-Stage.Center.add("Element", {name:"grayBG", z:99, clickMask:1, display:0, width:Stage.Center.width(), height:Stage.Center.height()}, {bgColor:"#000", bgAlpha:0.6});
-Stage.Center.add("Node", {
+Stage.add("Element", {name:"grayBG", z:99, display:0, width:Stage.width(), height:Stage.height()}, {bgColor:"#000", bgAlpha:0.6});
+Stage.add("Node", {
 	name:"Result",
 	z:100,
 	width:400,
 	height:300,
-	x:(Stage.Center.width()-400)/2,
-	y:(Stage.Center.height()-300)/2,
+	clickMask:1,
 	display:0,
+	alignParent:Define.Const.Align_CC,
 	add:[
 		["LineText", {name:"score", y:20, width:400, align:"center"}, Honey.Styles.FruitHit.Info],
 		["LineText", {name:"myRecord", y:70, width:400, align:"center"}, Honey.Styles.FruitHit.Info],
 		["LineText", {name:"worldRecord", y:120, width:400, align:"center"}, Honey.Styles.FruitHit.Info],
 		["Button", "again", 70, 230, function(){
-			Stage.Center.Result.display(0);
-			Stage.Center.grayBG.display(0);
+			Stage.Result.display(0);
+			Stage.grayBG.display(0);
 			Game.Rule.start();
 		}, {front:[Define.Element.LineText, {text:"AGAIN", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
 		["Button", "quit", 210, 230, function(){
-			Stage.Center.Result.display(0);
-			Stage.Center.grayBG.display(0);
+			Stage.Result.display(0);
+			Stage.grayBG.display(0);
 			Game.quit();
 		}, {front:[Define.Element.LineText, {text:"QUIT", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
 	],
@@ -150,8 +152,8 @@ Stage.Center.add("Node", {
 		this.score.content("SCORE:"+Game.Rule.score);
 		this.myRecord.content("YOUR RECORD: "+Game.Rule.storage.myRecord);
 		this.worldRecord.content("WORLD RECORD: "+Game.Rule.worldRecord);
-		Game.Stage.Center.Result.show();
-		Game.Stage.Center.grayBG.display(1);
+		Game.Stage.Result.show();
+		Game.Stage.grayBG.display(1);
 	},
 	show: function() {
 		this.scale(0.1, 0.1);
