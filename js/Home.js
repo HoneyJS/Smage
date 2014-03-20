@@ -11,7 +11,9 @@ var Home = new Honey.Node(
 			Honey.fitBody();
 		},
 		add : [
-			["Node", {name:"Games", width:480, height:800}],
+			[Define.Element.Node, {name:"Games", width:Config.Width, height:Config.Height, alignParent:Define.Const.Align_CC}],
+			[Define.Element.LineText, {y:50, text:"Smage", alignParent:Define.Const.Align_CN, height:100}, {color:"#f63", fontSize:80, shadow:1}],
+			[Define.Element.LineText, {text:"v1.1.2", alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
 		],
 	},
 	{
@@ -23,7 +25,6 @@ Smage.Home = Home;
 EventM.regist("resize", Home, function(){
 	this.width(Honey.body.width());
 	this.height(Honey.body.height());
-	this.Games.x((this.width()-this.Games.width())/2);
 });
 
 //游戏列表
@@ -46,11 +47,17 @@ var games = [
 			return 1;
 		},
 	},
+	{
+		name:"关于",
+		begin:function(){
+
+		},
+	},
 ];
 foreach(games, function(game, i){
-	Home.Games.add("Button", "begin"+i, (Home.Games.width()-Honey.Styles.Button.Home.width)/2, 250+(Honey.Styles.Button.Home.height+20)*i, function(){
+	Home.Games.add("Button", "begin"+i, 0, 250+(Honey.Styles.Button.Home.height+20)*i, function(){
 		if (this.game.begin()) Home.removed();
-	}, {game:game, front:[Define.Element.LineText, {text:game.name, align:"center"}, Honey.Styles.Button.Home]}, Honey.Styles.Button.Home);
+	}, {alignParent:Define.Const.Align_CN, game:game, front:[Define.Element.LineText, {text:game.name, align:"center"}, Honey.Styles.Button.Home]}, Honey.Styles.Button.Home);
 });
 
 })();

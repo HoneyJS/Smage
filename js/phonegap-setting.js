@@ -5,6 +5,14 @@
 	document.addEventListener("deviceready", onDeviceReady, false);
 	// PhoneGap加载完毕
 	function onDeviceReady() {
+		// 重设window方法
+		if (isMobile()) {
+			window.alert = function(msg, callback, title, button) {
+				navigator.notification.alert(msg, function(){
+					callback && callback();
+				}, title||"提示", button||"确定");
+			};
+		}
 		//按钮事件
 		//checkConnection();
 		document.addEventListener("backbutton", eventBackButton, false); //返回键
