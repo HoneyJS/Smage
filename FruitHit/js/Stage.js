@@ -121,7 +121,7 @@ forloop (Game.Config.CellX, function(i){
 //操作按钮
 Stage.Center.add("Button", "Finish", (Stage.Center.width()-Honey.Styles.FruitHit.Button.Pause.width)/2, Stage.Center.Board.y()+Stage.Center.Board.height()+10, function(){
 	Game.Rule.end();
-}, {front:[Define.Element.LineText, {text:"FINISH", align:"center"}, Honey.Styles.FruitHit.Button.Pause]}, Honey.Styles.FruitHit.Button.Pause);
+}, {front:[Define.Element.LineText, {text:"结束", align:"center"}, Honey.Styles.FruitHit.Button.Pause]}, Honey.Styles.FruitHit.Button.Pause);
 
 //结果
 Stage.add("Element", {name:"grayBG", z:99, display:0, width:Stage.width(), height:Stage.height()}, {bgColor:"#000", bgAlpha:0.6});
@@ -141,17 +141,17 @@ Stage.add("Node", {
 			Stage.Result.display(0);
 			Stage.grayBG.display(0);
 			Game.Rule.start();
-		}, {front:[Define.Element.LineText, {text:"AGAIN", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
+		}, {front:[Define.Element.LineText, {text:"重来", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
 		["Button", "quit", 210, 230, function(){
 			Stage.Result.display(0);
 			Stage.grayBG.display(0);
 			Game.quit();
-		}, {front:[Define.Element.LineText, {text:"QUIT", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
+		}, {front:[Define.Element.LineText, {text:"退出", align:"center"}, Honey.Styles.FruitHit.Button.Result]}, Honey.Styles.FruitHit.Button.Result],
 	],
 	showResult:function(){
-		this.score.content("SCORE:"+Game.Rule.score);
-		this.myRecord.content("YOUR RECORD: "+Game.Rule.storage.myRecord);
-		this.worldRecord.content("WORLD RECORD: "+Game.Rule.worldRecord);
+		this.score.content("分数:"+Game.Rule.score);
+		this.myRecord.content("你的纪录: "+Game.Rule.storage.myRecord);
+		this.worldRecord.content("世界纪录: "+Game.Rule.worldRecord);
 		Game.Stage.Result.show();
 		Game.Stage.grayBG.display(1);
 	},
