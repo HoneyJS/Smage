@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.Smage"
-        version   = "1.1.0.009">
+        version   = "1.1.0.010">
 
     <name>Smage</name>
 
@@ -25,7 +25,7 @@
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="3.1.0" />          <!-- all: current version of PhoneGap -->
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
@@ -82,10 +82,10 @@
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
 
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="icon.png"  gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="icon.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="icon.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="icon.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="icon.png"  gap:platform="android" gap:density="ldpi" width="320" height="320" />
+    <gap:splash src="icon.png"  gap:platform="android" gap:density="mdpi" width="320" height="320" />
+    <gap:splash src="icon.png"  gap:platform="android" gap:density="hdpi" width="320" height="320" />
+    <gap:splash src="icon.png" gap:platform="android" gap:density="xhdpi" width="320" height="320" />
     <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
