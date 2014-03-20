@@ -23,7 +23,7 @@ var Stage = new Honey.Node(
 			this.updateInfo();
 		},
 		updateInfo : function() {
-			this.Center.Info.content("SCORE:"+Game.Rule.score+"   TIME:"+Game.Rule.leftTime+"s");
+			this.Center.Info.content("分数:"+Game.Rule.score+"   时间:"+Game.Rule.leftTime+"s");
 		},
 		addCell : function(cell) {
 			var xy = cell.getSeatXY();
@@ -89,7 +89,7 @@ EventM.regist("resize", Stage, function(){
 //资源加载中
 Stage.Center.add("LineText", {name:"loading", content:"loading...", align:"center", width:Stage.Center.width(), height:Stage.Center.height()}, {color:"white"});
 //信息
-Stage.Center.add("LineText", "Info", 0, 10, "SCORE:0   TIME:0s", {width:Stage.Center.width(), align:"center"}, Honey.Styles.CellRush.Info);
+Stage.Center.add("LineText", "Info", 0, 10, "", {width:Stage.Center.width(), align:"center"}, Honey.Styles.CellRush.Info);
 Stage.Center.add("Element", {
 	name : "TimerBar",
 	y : 50,
