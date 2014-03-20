@@ -16,10 +16,10 @@ Styles.Button = {
 	Home:{
 		color:"yellow",
 		fontSize:40,
-		width:300,
-		height:60,
+		width:250,
+		height:58,
 		shadow:1,
-		bgColor:"green"
+		bgImage:"button.png",
 	},
 };
 

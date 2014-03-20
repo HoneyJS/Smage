@@ -48,7 +48,7 @@ var games = [
 	},
 ];
 foreach(games, function(game, i){
-	Home.Games.add("Button", "begin"+i, (Home.Games.width()-Honey.Styles.Button.Home.width)/2, 50+(Honey.Styles.Button.Home.height+20)*i, function(){
+	Home.Games.add("Button", "begin"+i, (Home.Games.width()-Honey.Styles.Button.Home.width)/2, 250+(Honey.Styles.Button.Home.height+20)*i, function(){
 		if (this.game.begin()) Home.removed();
 	}, {game:game, front:[Define.Element.LineText, {text:game.name, align:"center"}, Honey.Styles.Button.Home]}, Honey.Styles.Button.Home);
 });
