@@ -5,7 +5,6 @@
 	document.addEventListener("deviceready", onDeviceReady, false);
 	// PhoneGap加载完毕
 	function onDeviceReady() {
-		alert("onDeviceReady");
 		//按钮事件
 		//checkConnection();
 		document.addEventListener("backbutton", eventBackButton, false); //返回键
