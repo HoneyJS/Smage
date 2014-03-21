@@ -14,6 +14,7 @@ var Rule = {
 	leftTime : 100,
 	totalTime : 100,
 	start : function() {
+		Honey.body.add(Game.Stage);
 		this.score = 0;
 		this.totalTime = this.leftTime = Game.Config.TotalTime;
 		this.startTime = new Date().getTime();
