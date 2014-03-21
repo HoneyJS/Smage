@@ -114,44 +114,45 @@ forloop (Game.Config.CellX, function(i){
 //操作按钮
 Stage.Center.add("Button", "Finish", (Stage.Center.width()-Honey.Styles.CellRush.Button.Pause.width)/2, Stage.Center.Board.y()+Stage.Center.Board.height()+10, function(){
 	Game.Rule.end();
-}, {front:[Define.Element.LineText, {text:"结束", align:"center"}, Honey.Styles.CellRush.Button.Pause]}, Honey.Styles.CellRush.Button.Pause);
+}, {front:[Define.Element.LineText, {text:"结束", align:"center"}, Honey.Styles.CellRush.Button.Pause_Text]}, Honey.Styles.CellRush.Button.Pause);
 
 //结果
 Stage.add("Element", {name:"grayBG", z:99, display:0, width:Stage.width(), height:Stage.height()}, {bgColor:"#000", bgAlpha:0.6});
 Stage.add("Node", {
 	name:"Result",
 	z:100,
-	width:400,
-	height:300,
 	clickMask:1,
 	display:0,
 	alignParent:Define.Const.Align_CC,
 	add:[
-		["LineText", {name:"score", y:20, width:400, align:"center"}, Honey.Styles.CellRush.Info],
-		["LineText", {name:"myRecord", y:70, width:400, align:"center"}, Honey.Styles.CellRush.Info],
-		["LineText", {name:"worldRecord", y:120, width:400, align:"center"}, Honey.Styles.CellRush.Info],
-		["Button", "again", 70, 230, function(){
+		["LineText", {y:40, width:200, align:"right", x:20, text:"分数:"}, Honey.Styles.CellRush.Info],
+		["LineText", {y:40, width:200, align:"left", x:240, name:"score"}, Honey.Styles.CellRush.Info],
+		["LineText", {y:90, width:200, align:"right", x:20, text:"你的纪录:"}, Honey.Styles.CellRush.Info],
+		["LineText", {y:90, width:200, align:"left", x:240, name:"myRecord"}, Honey.Styles.CellRush.Info],
+		["LineText", {y:140, width:200, align:"right", x:20, text:"世界纪录:"}, Honey.Styles.CellRush.Info],
+		["LineText", {y:140, width:200, align:"left", x:240, name:"worldRecord"}, Honey.Styles.CellRush.Info],
+		["Button", "again", 70, 210, function(){
 			Stage.Result.display(0);
 			Stage.grayBG.display(0);
 			Game.Rule.start();
-		}, {front:[Define.Element.LineText, {text:"重来", align:"center"}, Honey.Styles.CellRush.Button.Result]}, Honey.Styles.CellRush.Button.Result],
-		["Button", "quit", 210, 230, function(){
+		}, {front:[Define.Element.LineText, {text:"重来", align:"center"}, Honey.Styles.CellRush.Button.Result_Text]}, Honey.Styles.CellRush.Button.Result],
+		["Button", "quit", 210, 210, function(){
 			Stage.Result.display(0);
 			Stage.grayBG.display(0);
 			Game.quit();
-		}, {front:[Define.Element.LineText, {text:"退出", align:"center"}, Honey.Styles.CellRush.Button.Result]}, Honey.Styles.CellRush.Button.Result],
+		}, {front:[Define.Element.LineText, {text:"退出", align:"center"}, Honey.Styles.CellRush.Button.Result_Text]}, Honey.Styles.CellRush.Button.Result],
 	],
 	showResult:function(){
-		this.score.content("分数:"+Game.Rule.score);
-		this.myRecord.content("你的纪录: "+Game.Rule.storage.myRecord);
-		this.worldRecord.content("世界纪录: "+Game.Rule.worldRecord);
+		this.score.content(Game.Rule.score);
+		this.myRecord.content(Game.Rule.storage.myRecord);
+		this.worldRecord.content(Game.Rule.worldRecord);
 		Game.Stage.Result.show();
 		Stage.grayBG.display(1);
 	},
 	show: function() {
 		if (this.display()) return;
 		this.scale(0.1, 0.1);
-		this.addAction([Honey.Action.ScaleTo(300, 1, 1)]);
+		this.addAction([Honey.Action.ScaleTo(300, 1.2, 1.2), Honey.Action.ScaleTo(200, 0.8, 0.8), Honey.Action.ScaleTo(100, 1, 1)]);
 		this.display(1);
 	},
 }, Honey.Styles.CellRush.Result);

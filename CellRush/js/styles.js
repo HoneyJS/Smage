@@ -7,7 +7,7 @@ var Styles = Honey.Styles;
 
 Styles.CellRush = {
 	Info : {
-		color:"#B5F5BC",
+		color:"#af3",
 		fontSize:30,
 		shadow:1,
 	},
@@ -45,26 +45,34 @@ Styles.CellRush = {
 		borderWidth:2,
 	},
 	Result : {
-		bgColor:"gray",
-		borderColor:"black",
-		borderWidth:3,
+		width:400,
+		height:300,
+		bgImage:"result-bg.png"
 	},
 	Button : {
 		Result : {
+			width:120,
+			height:50,
+			bgImage:"button-bg.png"
+		},
+		Result_Text : {
 			color:"yellow",
 			fontSize:30,
 			width:120,
 			height:50,
-			shadow:1,
-			bgColor:"green"
+			shadow:1
 		},
 		Pause : {
+			width:120,
+			height:50,
+			bgImage:"button-bg.png"
+		},
+		Pause_Text : {
 			color:"yellow",
 			fontSize:30,
 			width:120,
-			height:40,
-			shadow:1,
-			bgColor:"green"
+			height:50,
+			shadow:1
 		},
 	},
 };
