@@ -20,9 +20,14 @@
 		showGuide:function(callback) {
 			this._callback = callback;
 			Honey.body.add(this);
+		},
+		saveGuide:function() {
+			Game.Rule.storage.guided = 1;
+			Honey.Storage.set("CellRush", Game.Rule.storage);
 		}
 	}, {bgColor:"#000"}, {onclick:function(){
 		this.removed();
+		//this.saveGuide();
 		this._callback && this._callback();
 	}});
 	Game.Guide = Guide;
