@@ -15,9 +15,13 @@ var Home = new Honey.Node(
 			[Define.Element.LineText, {y:50, text:"Smage", alignParent:Define.Const.Align_CN, height:100}, {color:"#f63", fontSize:80, shadow:1}],
 			[Define.Element.LineText, {text:"v1.1.2", alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
 		],
+		_bgPosX : 0,
+		schedule:[function() {
+			this.Style.bgImage(["bg.jpg", (++this._bgPosX)%(1920-648), 0, 648, 1080]);
+		}, 5]
 	},
 	{
-		bgImage:"bg.jpg",
+		bgImage:["bg.jpg", 0, 0, 648, 1080],
 	}
 );
 Smage.Home = Home;
