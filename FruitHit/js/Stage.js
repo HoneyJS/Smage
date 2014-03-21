@@ -156,6 +156,7 @@ Stage.add("Node", {
 		Game.Stage.grayBG.display(1);
 	},
 	show: function() {
+		if (this.display()) return;
 		this.scale(0.1, 0.1);
 		this.addAction([Honey.Action.ScaleTo(300, 1, 1)]);
 		this.display(1);

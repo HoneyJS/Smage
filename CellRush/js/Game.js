@@ -9,10 +9,16 @@ var Game = Smage.CellRush;
 Game.load = function() {
 	//资源
 	this.Stage.showLoading(1);
-	Honey.Resource.loadImages([this.Define.CellImage.red[0], this.Define.CellBackImage], this.Stage, function(){
-		this.showLoading(0);
-		//初始化
-		Smage.CellRush.Rule.start();
+	Honey.Resource.loadImages([this.Define.CellImage.red[0], this.Define.CellBackImage], this, function(){
+		this.Stage.showLoading(0);
+		if (!this.Rule.storage.guided && this.Guide) {
+			this.Guide.showGuide(function() {
+				Game.Rule.start();
+			});
+		} else {
+			//初始化
+			this.Rule.start();
+		}
 	});
 	
 	//适配屏幕
