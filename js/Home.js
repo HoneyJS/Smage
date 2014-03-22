@@ -13,7 +13,7 @@ var Home = new Honey.Node(
 		add : [
 			[Define.Element.Node, {name:"Games", width:Config.Width, height:Config.Height, alignParent:Define.Const.Align_CC}],
 			[Define.Element.LineText, {y:50, text:"Smage", alignParent:Define.Const.Align_CN, height:100}, {color:"#f63", fontSize:80, shadow:1}],
-			[Define.Element.LineText, {text:"v1.1.6", alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
+			[Define.Element.LineText, {text:"v1.1.8", alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
 		],
 		_bgPosX : 0,
 		schedule:[function() {
