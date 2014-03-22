@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.Smage"
-        version   = "1.2.0.002">
+        version   = "1.2.0.001">
 
     <name>天天乱炖</name>
 
