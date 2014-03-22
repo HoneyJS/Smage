@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.Smage"
-        version   = "1.1.8.002">
+        version   = "1.2.0.001">
 
-    <name>Smage</name>
+    <name>天天乱炖</name>
 
     <description>
-        Smage小游戏系列
+        "天天乱炖"小游戏系列
     </description>
 
     <author href="http://hi.baidu.com/__rhine__" email="lyh_0100@sohu.com">

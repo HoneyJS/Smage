@@ -12,8 +12,8 @@ var Home = new Honey.Node(
 		},
 		add : [
 			[Define.Element.Node, {name:"Games", width:Config.Width, height:Config.Height, alignParent:Define.Const.Align_CC}],
-			[Define.Element.LineText, {y:50, text:"Smage", alignParent:Define.Const.Align_CN, height:100}, {color:"#f63", fontSize:80, shadow:1}],
-			[Define.Element.LineText, {text:"v1.1.8", alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
+			[Define.Element.LineText, {y:50, text:"天天乱炖", alignParent:Define.Const.Align_CN, height:100}, {color:"#f63", fontSize:80, shadow:1}],
+			[Define.Element.LineText, {text:"v"+Config.Version, alignParent:Define.Const.Align_RB, size:[100, 40]}, {color:"#fff", fontSize:26, shadow:1, fontWeight:"bold"}],
 		],
 		_bgPosX : 0,
 		schedule:[function() {
@@ -54,7 +54,7 @@ var games = [
 	{
 		name:"关于",
 		begin:function(){
-			alert("Version:1.16\n莱茵科技出品");
+			alert("Version:"+Config.Version+"\n莱茵科技出品");
 		},
 	},
 ];
