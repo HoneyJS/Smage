@@ -54,7 +54,7 @@ var games = [
 	{
 		name:"关于",
 		begin:function(){
-
+			alert("Version:1.16\n莱茵科技出品");
 		},
 	},
 ];
