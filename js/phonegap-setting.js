@@ -26,7 +26,7 @@
 	}
 	//返回键
 	function eventBackButton() {
-		navigator.notification.confirm('确定要从Smage中退出？', // 显示信息
+		navigator.notification.confirm('确定要从'+Config.Name+'中退出？', // 显示信息
 			onQuitConfirm, // 按下按钮后触发的回调函数，返回按下按钮的索引
 			'退出应用', // 标题
 			['取消', '确定'] // 按钮标签
