@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.honeyjs.tiantianluandun"
-        version   = "1.2.0.002">
+        version   = "1.2.1.001">
 
-    <name>天天乱炖</name>
+    <name>天天乱炖(2048朝代版)</name>
 
     <description>
-        "天天乱炖"小游戏系列
+        "天天乱炖"小游戏系列，内含2048朝代版、消方块、打豆豆等小游戏。
     </description>
 
     <author href="http://hi.baidu.com/__rhine__" email="lyh_0100@sohu.com">

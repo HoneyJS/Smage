@@ -34,6 +34,13 @@ EventM.regist("resize", Home, function(){
 //游戏列表
 var games = [
 	{
+		name:"2048朝代版",
+		begin:function(){
+			window.location.href = "2048/index.html";
+			return 1;
+		},
+	},
+	{
 		name:"消方块",
 		begin:function(){
 			window.location.href = "CellRush/index.html";
