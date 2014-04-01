@@ -11,7 +11,9 @@ body {
   margin: 0px 0; }
 
 .heading {
-    text-align: center;}
+    text-align: center;
+    margin-top: 50px;
+}
 .heading:after {
   content: "";
   display: block;

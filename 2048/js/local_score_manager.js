@@ -46,3 +46,30 @@ LocalScoreManager.prototype.set = function (score) {
   this.storage.setItem(this.key, score);
 };
 
+function LocalArchiveManager() {
+	this.key     = "lastArchive";
+
+	var supported = this.localStorageSupported();
+	this.storage = supported ? window.localStorage : window.fakeStorage;
+}
+
+LocalArchiveManager.prototype.localStorageSupported = function () {
+	var testKey = "test";
+	var storage = window.localStorage;
+
+	try {
+		storage.setItem(testKey, "1");
+		storage.removeItem(testKey);
+		return true;
+	} catch (error) {
+		return false;
+	}
+};
+
+LocalArchiveManager.prototype.get = function () {
+	return this.storage.getItem(this.key) && JSON.parse(this.storage.getItem(this.key)) || null;
+};
+
+LocalArchiveManager.prototype.set = function (archive) {
+	this.storage.setItem(this.key, JSON.stringify(archive));
+};

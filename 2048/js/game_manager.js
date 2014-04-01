@@ -1,15 +1,17 @@
 var maxscore = 2;
 
-function GameManager(size, InputManager, Actuator, ScoreManager) {
+function GameManager(size, InputManager, Actuator, ScoreManager, ArchiveManager) {
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
   this.scoreManager = new ScoreManager;
+	this.archiveManager = new ArchiveManager;
   this.actuator     = new Actuator;
 
   this.startTiles   = 2;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
+	this.inputManager.on("leave", this.archive.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
   this.setup();
@@ -20,6 +22,17 @@ GameManager.prototype.restart = function () {
   maxscore = 2;
   this.actuator.continue();
   this.setup();
+};
+
+// Archive the game
+GameManager.prototype.archive = function () {
+	var tiles = [];
+	this.grid.cells.forEach(function(cell) {
+		cell.forEach(function(tile) {
+			if (tile) tiles.push([tile.x, tile.y, tile.value]);
+		});
+	});
+	if (tiles.length) this.archiveManager.set({tiles:tiles, score:this.score});
 };
 
 // Keep playing after winning
@@ -46,7 +59,16 @@ GameManager.prototype.setup = function () {
   this.keepPlaying = false;
 
   // Add the initial tiles
-  this.addStartTiles();
+	var archive = this.archiveManager.get();
+	if (archive) {
+		this.archiveManager.set(null);
+		this.score = archive.score;
+		var self = this;
+		archive.tiles.forEach(function(tile) {
+			self.grid.insertTile(new Tile({x:tile[0], y:tile[1]}, tile[2]));
+		});
+	} else
+		this.addStartTiles();
 
   // Update the actuator
   this.actuate();

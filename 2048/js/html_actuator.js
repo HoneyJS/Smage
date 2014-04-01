@@ -150,7 +150,7 @@ HTMLActuator.prototype.updateScore = function (score) {
     this.scoreContainer.appendChild(addition);
 	  var self = this;
 	  setTimeout(function() {
-		  self.scoreContainer.removeChild(addition);
+		  if (addition.parentNode == self.scoreContainer) self.scoreContainer.removeChild(addition);
 	  }, 600);
   }
 };
@@ -161,20 +161,20 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var mytxt=new Array(14);
-  mytxt[0]="连秦始皇都见不到了T.T";
-  mytxt[1]="曹贼你还我大汉江山！";
-  mytxt[2]="都是赵高害得我！";
-  mytxt[3]="司马老儿果然奸诈！";
-  mytxt[4]="江山难坐啊！";
-  mytxt[5]="明朝天下一统，可惜看不到了！";
-  mytxt[6]="毁在杨广手里了……";
-  mytxt[7]="安史之乱亡我大唐……";
-  mytxt[8]="赵匡胤黄袍加身，兵不血刃啊！";
-  mytxt[9]="元人铁蹄果然厉害！";
-  mytxt[10]="还是朱元璋厉害……";
-  mytxt[11]="天地会的弟兄们，反清复明啊！";
-  mytxt[12]="连辛亥革命的黎明都没等到……";
-  mytxt[13]="看不到天朝的太阳了 = =";
+  mytxt[0]="花开花落花开花落，悠悠岁月长长的河";
+	mytxt[1]="力拔山兮气盖世，时不利兮骓不逝。";
+  mytxt[2]="但使龙城飞将在，不教胡马度阴山。";//"将军百战死，壮士十年归。";
+  mytxt[3]="大江东去，浪淘尽、千古风流人物。";
+  mytxt[4]="悟已往之不谏，知来者之可追。";
+  mytxt[5]="商女不知亡国恨，隔江犹唱后庭花！";
+  mytxt[6]="借问长城侯，单于入朝谒。";
+  mytxt[7]="春宵苦短日高起，从此君王不早朝……";
+  mytxt[8]="待从头、收拾旧山河，朝天阙。";
+  mytxt[9]="一代天骄，只识弯弓射大雕！";
+  mytxt[10]="粉身碎骨全不顾，要留清白在人间。";
+  mytxt[11]="量中华之物力，结与国之欢心……";
+  mytxt[12]="革命尚未成功,同志仍须努力。";
+  mytxt[13]="数风流人物，还看今朝！";
 
 
   var text3 = function (m) { var r = 0; while (m > 1) r++, m >>= 1; return r; }
